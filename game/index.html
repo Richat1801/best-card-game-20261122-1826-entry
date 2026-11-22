@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Court — a duelling card battler</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="table">
+  <header id="topbar">
+    <div id="foe" class="hero">
+      <div class="portrait foe-portrait" id="foe-portrait" title="Ashen Warden">♜</div>
+      <div class="hero-info">
+        <div class="hero-name" id="foe-name">Ashen Warden</div>
+        <div class="life-row"><span class="life-label">LIFE</span><span class="life" id="foe-life">20</span><span class="life-max">/ 20</span></div>
+        <div class="mana-row" id="foe-mana"></div>
+      </div>
+      <div class="deck-pile" id="foe-deck"><span id="foe-deck-count">27</span><span class="pile-label">DECK</span></div>
+    </div>
+    <div id="brand">
+      <div id="brand-title">EMBER COURT</div>
+      <div id="brand-sub">a duelling card battler</div>
+    </div>
+    <div id="me" class="hero">
+      <div class="deck-pile" id="my-deck"><span id="my-deck-count">27</span><span class="pile-label">DECK</span></div>
+      <div class="hero-info right">
+        <div class="hero-name" id="my-name">You · Ember Court</div>
+        <div class="life-row"><span class="life-label">LIFE</span><span class="life" id="my-life">20</span><span class="life-max">/ 20</span></div>
+        <div class="mana-row" id="my-mana"></div>
+      </div>
+      <div class="portrait my-portrait" id="my-portrait" title="You">♞</div>
+    </div>
+  </header>
+
+  <div id="foe-hand" class="hand-row" aria-label="Opponent hand"></div>
+
+  <div id="board">
+    <div id="foe-board" class="board-row" aria-label="Opponent creatures"></div>
+    <div id="midline">
+      <div id="log" aria-label="Battle log"></div>
+      <div id="turn-panel">
+        <div id="turn-label">YOUR TURN</div>
+        <button id="end-turn" type="button">End Turn ⏎</button>
+        <div id="hint">Click a card to play it · click a creature, then a target, to attack</div>
+      </div>
+    </div>
+    <div id="my-board" class="board-row" aria-label="Your creatures"></div>
+  </div>
+
+  <div id="my-hand" class="hand-row" aria-label="Your hand"></div>
+
+  <footer id="bottombar">
+    <div id="score-line"><span id="wins">Wins 0</span> · <span id="losses">Losses 0</span> · <span id="round-label">Round 1</span></div>
+    <div id="keys">Keys: <b>1–5</b> play card · <b>Space</b> end turn · <b>R</b> new duel · <b>Esc</b> cancel</div>
+  </footer>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <div id="overlay-kicker"></div>
+      <h1 id="overlay-title"></h1>
+      <p id="overlay-text"></p>
+      <div id="overlay-rules"></div>
+      <button id="overlay-button" type="button"></button>
+    </div>
+  </div>
+  <div id="diag" hidden></div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
